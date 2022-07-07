@@ -1,0 +1,87 @@
+<view class="page" style="#FFFFFF">
+    <view >
+        <div >
+        <!-- <block wx:if="{{index == 0 }}">
+            
+        </block> -->
+
+        <block wx:if="{{index == 0 }}" >
+            <div style="width:50px; margin-left:43.5%;height: 30px; overflow: hidden; margin-top:0px" bindtap="show_scroll">
+            <p class="show_week">第 </p><p class="show_week" style="font-size:20px;">{{now}}</p><p class="show_week"> 周</p>
+            </div>
+            <block wx:if="{{show_scroll}}">
+                <div class="scroll-view-container">
+                <scroll-view scroll-x="true" :scroll-into-view="toView" style="height:40px;" scroll-into-view="A{{now-3}}">
+                    <view wx:for="{{week}}" wx:key="item.id" wx:for-index="index" class="ng" id="A{{item.id}}">
+                        <div data-index="{{index}}" class="ng" bindtap="div_color" style='{{num == index ? "background-color:#FFFFFF":"background-color:#eef2f3"}}'>
+                            <p class="weui-grid__label div_block" style="font-size:13px; color:{{item.color}}; height:60%; width:100%; margin-top:15%" bindtap="change_week" data-id="{{item.id}}">{{item.week}}</p>
+                        </div>
+                    </view>
+                </scroll-view>
+            </div>
+            </block>
+            
+            <view id = "tab1" class="weui-tab__bd-item" >
+                <div class="weui-grids" style="display:block">
+                    <view wx:for="{{schedule}}" wx:key="id">
+                    <a href="javascript:" class="weui-grid div_block" style="background-color:{{item.color}};color:#393939; width:14.27%; height:calc(6vh); padding-top:0px; padding-bottom: 0px;">
+                        <p class="weui-grid__label div_block" style="font-size:12px; height:50%; width:100%;color:#393939"> {{item.week}} </p>
+                        <p class="weui-grid__label div_block" style="font-size:11px; height:30%; width:100%;color:#393939"> {{item.date}} </p>
+                    </a>
+                    </view>
+                </div>
+            
+                <div class="weui-grids" >
+                    <mp-dialog title="教室" show="{{dialogShow}}" bindbuttontap="tap_shut" buttons="{{buttons}}">
+                        <view>{{text}}</view>
+                        <view>{{time_start_end}}</view>
+                    </mp-dialog>
+                    <view wx:for="{{tabl}}" wx:key="id" >
+                        <a href="javascript:" class="weui-grid" style=" color:#FFFFFF; width:14.27%; height:calc(38vh); padding-top:2px; padding-bottom:2px; padding-right:2px; padding-left:2px">
+                            <view wx:for="{{item.id}}" wx:for-item="i">
+                            <div class="div_block" style="box-shadow: 0px 1px 3px 0px {{item.bg[i]}};; margin-right: 1px; margin-left:0.5px; background-color:{{item.bg[i]}}; color:#FFFFFF; font-size:13px; ; display:block; width:100%; height:calc({{item.height[i]}}*0.95); font-weight:6px" bindtap="tap_dialog" data-name="{{item.name[i]}}" data-t="{{item.time_start_end}}">
+                            <p class="many_text" style="width:100%; -webkit-line-clamp: {{item.size[i]}}; ">{{item.name[i]}}</p>
+                            </div>
+                            </view>
+                            
+                            
+                            <!-- <block wx:if="{{item.if_single == 2}}"> -->
+                                <!-- <div class=" div_block" style="margin-right: 1px; margin-left:1px; background-color:{{item.bg_one}}; color:#FFFFFF; font-size:11px; ; display:block; width:100%; height:calc(19vh*0.48); ">
+                                    <p class= "many_text" style="height:95%; width:95%;">{{item.name_one}}</p>
+                                </div>
+                                <div class="div_block " style="margin-right: 1px; margin-left:1px; background-color:{{item.bg_two}}; color:#FFFFFF; font-size:11px; ; display:block; width:100%; height:calc(19vh*0.48);">
+                                    <p class= "many_text" style="height:95%; width:95%;">{{item.name_two}}</p>
+                                </div> -->
+                            <!-- </block> -->
+                            <!-- <block wx:if="{{item.if_single == 1 }}">
+                                <div class="div_block " style="margin-right: 1px; margin-left:1px; background-color:{{item.bg_one}}; color:#FFFFFF; font-size:11px; ; display:block; width:100%; height:calc(19vh*0.98);">
+                                    <p class= "many_text_two" style="height:95%; width:95%;">{{item.name_one}}</p>
+                                </div>
+                            </block> -->
+                            
+                        </a>
+                    </view>
+                </div>
+            </view>
+        </block>
+        <block wx:if="{{ index == 1 }}">
+        <view id = "tab2" class="weui-tab__bd-item" >
+            <div class="page preview js_show">
+                <div class="page__hd">
+                </div>
+                <div class="container">
+                    <view class="userinfo-avatar" >
+                        <open-data type="userAvatarUrl"></open-data>
+                    </view>
+                    <open-data style="font-size:20px; margin-top:20px" type="userNickName"></open-data>
+                </div>
+                <div class="page__ft j_bottom">
+                    
+                </div>
+            </div>
+        </view>
+        </block>
+        </div>
+    </view>
+    <mp-tabbar  style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="{{index}}"></mp-tabbar>
+</view>

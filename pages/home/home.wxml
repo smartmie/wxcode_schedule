@@ -1,0 +1,35 @@
+<!--pages/home/home.wxml-->
+<view style="margin-top:calc(20vh)">
+  <div class=" page__hd">
+  <div class="weui-cell weui-cell_active">
+                <div class="weui-cell__hd">
+                  <label class="weui-label">学号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" pattern="[0-9]*" placeholder="{{id}}" bindinput="id"></input>
+                </div>
+  </div>
+  <div class="weui-cell weui-cell_active">
+                <div class="weui-cell__hd">
+                  <label class="weui-label">密码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="password" pattern="[0-9]*" placeholder="{{password}}" bindinput="password"></input>
+                </div>
+  </div>
+  <div class="weui-cell weui-cell_active">
+                <div class="weui-cell__hd">
+                  <label class="weui-label">验证码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="test" pattern="[0-9]*" placeholder="{{security_code}}" bindinput="security_code"  maxlength="6"></input>
+                </div>
+                <div class="weui-cell__ft" style="height:30px;width: 80px;">
+                  <image src="{{src}}" style="height:30px;width: 80px;" bindtap="get_img" binderror="img_error"></image>
+                </div>
+  </div>
+ </div>
+ <div class="page__bd" style="margin-top:150px">
+  <button type="primary" bindtap="tap">登入</button>
+ </div>
+</view>

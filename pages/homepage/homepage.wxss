@@ -1,0 +1,94 @@
+
+  ::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+
+  .ng {
+    display: inline-block; 
+    width: 50px; 
+    background-color: #eef2f3; 
+    height:100%; 
+    border-radius: 2px;
+    color: #182f4e;
+  }
+
+  .show_week {
+    color: #222848;
+    display: inline;
+    overflow: hidden;
+    font-weight:bold;
+  }
+
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+  }
+
+  .div_block {
+    margin-bottom: 2px;
+    border-radius: 3px;
+    border:none !important;  
+  }
+
+  .many_text {
+    padding-left: 2px;
+    padding-right: 2px;
+    line-height: 140%;
+    word-wrap:break-word; 
+    word-break:break-all; 
+    overflow: hidden; 
+    display: -webkit-box; 
+    overflow: hidden; 
+    -webkit-box-orient: vertical
+  }
+  .many_text_two {
+    padding-left: 1px;
+    padding-right: 1px;
+    line-height: 140%;
+    word-wrap:break-word; 
+    word-break:break-all; 
+    overflow: hidden; 
+    display: -webkit-box; 
+    overflow: hidden; 
+    -webkit-line-clamp: 6; 
+    -webkit-box-orient: vertical
+  }
+
+  scroll-view {
+    width: 100%;
+    white-space: nowrap;  
+  }
+
+.swiper-tab{
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.swiper-tab-item{
+  width: 30%; 
+  color:#434343;
+}
+.active{
+  color:#F65959;
+  border-bottom: 4rpx solid #F65959;
+}
+swiper{
+text-align: center;
+}
